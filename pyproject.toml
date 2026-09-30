@@ -1,0 +1,5 @@
+[project]
+name = "comfyui-videotileslicer"
+version = "0.2.0"
+description = "Resumable model-independent video tile preparation, stitching and revisions"
+requires-python = ">=3.10"

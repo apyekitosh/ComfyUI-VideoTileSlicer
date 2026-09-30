@@ -1,0 +1,71 @@
+{
+  "1": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 256,
+      "height": 128,
+      "batch_size": 9,
+      "color": 5601177
+    }
+  },
+  "2": {
+    "class_type": "VTS2_Job",
+    "inputs": {
+      "source": [
+        "1",
+        0
+      ],
+      "job_folder": "vts/pass_through_api",
+      "width": 256,
+      "height": 128,
+      "tile_width": 160,
+      "tile_height": 96,
+      "frames": 5,
+      "overlap_frames": 1,
+      "fade_frames": 1,
+      "overlap_x": 16,
+      "overlap_y": 16,
+      "feather_x": 16,
+      "feather_y": 16,
+      "layout": "workflow",
+      "alignment": "wan",
+      "end_policy": "pad",
+      "curve": "linear",
+      "fps": 24,
+      "action": "continue",
+      "segment": 0,
+      "revision": 1,
+      "request_id": 0
+    }
+  },
+  "3": {
+    "class_type": "VTS2_Prepare",
+    "inputs": {
+      "job": [
+        "2",
+        0
+      ],
+      "control_mode": "workflow",
+      "reference_mode": "tile",
+      "reference_transform": "crop",
+      "sharpen": 0,
+      "source_strength": 0.1,
+      "preview": "control"
+    }
+  },
+  "4": {
+    "class_type": "VTS2_Commit",
+    "inputs": {
+      "generated": [
+        "3",
+        0
+      ],
+      "ticket": [
+        "3",
+        5
+      ],
+      "preview": "active",
+      "auto_queue": "off"
+    }
+  }
+}
